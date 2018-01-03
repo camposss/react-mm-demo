@@ -1,0 +1,28 @@
+.card{
+    height: 177px;
+    width: 120px;
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.front, .back{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.front{
+    /*border: 2px solid red;*/
+    background-color: black;
+    display: flex;
+}
+.front img, .back img{
+    width: 100%;
+    margin: auto;
+}
+.flipped{
+    display: none;
+}
