@@ -4,5 +4,6 @@
 .game-board{
     display: flex;
     margin: auto;
-    width: 80vw;
+    width: 60vw;
+    flex-wrap: wrap;
 }
