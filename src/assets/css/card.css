@@ -1,14 +1,24 @@
-.card{
+.card-container{
     height: 177px;
     width: 120px;
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
     border-radius: 10px;
     overflow: hidden;
     margin: auto;
 
 }
+
+.card{
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: all .5s ease-in-out;
+
+}
 .front, .back{
+    backface-visibility: hidden;
+    overflow: hidden;
     height: 100%;
     width: 100%;
     position: absolute;
@@ -19,11 +29,13 @@
     /*border: 2px solid red;*/
     background-color: black;
     display: flex;
+    transform: rotateY(180deg);
 }
 .front img, .back img{
+    height: 100%;
     width: 100%;
     margin: auto;
 }
 .flipped{
-    display: none;
+    transform: rotateY(180deg);
 }

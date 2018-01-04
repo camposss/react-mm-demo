@@ -3,6 +3,7 @@ import '../assets/css/app.css';
 import '../assets/css/card.css';
 import CardData from '../assets/helpers/card_data';
 import Card from './card';
+import { doubleArray, shuffleArray } from '../assets/helpers/'
 
 
 class App extends Component{
@@ -11,7 +12,7 @@ class App extends Component{
 
         this.state= {
             firstCardIndex: null,
-            cards: CardData,
+            cards: [],
             matches: 0,
             attempts: 0,
             gameState: 'ready'
@@ -22,6 +23,11 @@ class App extends Component{
         //since this will be purely mechanical we can set a new property
         //if we were to set this as a set, it would run asynchronously and the flag wouldn't apply appropriately.
         this.blockClick= false;
+    }
+    componentDidMount(){
+        this.setState({
+            cards: shuffleArray(doubleArray(CardData))
+        })
     }
     handleCardClick(index){
         if (this.blockClick) return;
